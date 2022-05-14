@@ -5,7 +5,7 @@ import time
 from paho.mqtt import client as mqtt_client
 import paho.mqtt.publish as publish
 
-active="0"
+
 
 def on_message_lb(mosq, obj, msg):
     if msg.payload.decode()=="1":
@@ -33,8 +33,7 @@ def on_message_active_resources(mosq, obj, msg):
     if msg=="0":
         publish.single("APSCC2022/CPUsage", msg, hostname="test.mosquitto.org")
         publish.single("APSCC2022/MEMusage", msg, hostname="test.mosquitto.org")
-        
-    
+         
         
 # def on_message_cpu(mosq, obj, msg):
 #     global active
