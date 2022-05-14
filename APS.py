@@ -1,11 +1,7 @@
 from turtle import Screen
-import os
 import psutil
-import time
 from paho.mqtt import client as mqtt_client
 import paho.mqtt.publish as publish
-
-
 
 def on_message_lb(mosq, obj, msg):
     if msg.payload.decode()=="1":
